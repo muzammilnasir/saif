@@ -1,3 +1,14 @@
+// loade
+window.addEventListener("load", () => {
+  const loaderContainer = document.querySelector(".loader-container");
+  loaderContainer.classList.add("loader-container--hidden");
+
+  const loader = document.querySelector(".loader");
+  loader.addEventListener("transitionend", () => {
+    document.body.removeChild(loaderContainer);
+  });
+});
+//
 // start navbar 
 const body = document.querySelector(".responsive");
 const navbar = document.querySelector(".navbar");
@@ -76,3 +87,20 @@ cards.forEach((card) => {
     }
   });
 });
+////////// start click to top btn
+$(document).ready(function () {
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 20) {
+      $('#scroll-top').fadeIn();
+    } else {
+      $('#scroll-top').fadeOut();
+    }
+  });
+
+  $('#scroll-top-btn').click(function () {
+    window.scrollTo(0, 0);
+    
+    return false;
+  });
+});
+////////// end click to top btn
